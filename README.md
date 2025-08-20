@@ -128,4 +128,4 @@ DDMTemplate/
 ---
 
 **Desenvolvido para fins educacionais** 🎓
-Perfeito para demonstrar conceitos fundamentais de React Native e desenvolvimento mobile!
+Disciplina de Dispositivos Móveis - Unochapecó
