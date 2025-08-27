@@ -26,7 +26,7 @@ export const PageTemplate: React.FC<PageTemplateProps> = ({
           <ThemedText style={styles.subtitle}>{subtitle}</ThemedText>
         )}
       </ThemedView>
-      
+
       <ThemedView style={styles.content}>
         {children}
       </ThemedView>
@@ -35,13 +35,13 @@ export const PageTemplate: React.FC<PageTemplateProps> = ({
 
   if (keyboardAvoiding) {
     return (
-      <KeyboardAvoidingView 
-        style={styles.keyboardContainer} 
+      <KeyboardAvoidingView
+        style={styles.keyboardContainer}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         {scrollable ? (
-          <ScrollView 
-            style={styles.scrollView} 
+          <ScrollView
+            style={styles.scrollView}
             contentContainerStyle={styles.scrollContent}
             showsVerticalScrollIndicator={false}
             keyboardShouldPersistTaps="handled"
@@ -56,8 +56,8 @@ export const PageTemplate: React.FC<PageTemplateProps> = ({
   }
 
   return scrollable ? (
-    <ScrollView 
-      style={styles.scrollView} 
+    <ScrollView
+      style={styles.scrollView}
       showsVerticalScrollIndicator={false}
     >
       {content}
@@ -70,15 +70,12 @@ export const PageTemplate: React.FC<PageTemplateProps> = ({
 const styles = StyleSheet.create({
   keyboardContainer: {
     flex: 1,
-    backgroundColor: '#ffffff',
   },
   scrollView: {
     flex: 1,
-    backgroundColor: '#ffffff',
   },
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
     paddingTop: 60,
   },
   header: {
@@ -95,6 +92,5 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     flexGrow: 1,
-    paddingBottom: 100, // Espaço extra para evitar sobreposição com tabs
   },
 });
