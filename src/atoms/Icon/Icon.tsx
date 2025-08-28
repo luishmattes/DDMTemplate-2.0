@@ -1,5 +1,5 @@
-import React from 'react';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import React from 'react';
 
 export interface IconProps {
   name: string;
@@ -7,10 +7,10 @@ export interface IconProps {
   color?: string;
 }
 
-export const Icon: React.FC<IconProps> = ({ 
-  name, 
-  size = 24, 
-  color = '#333' 
+export const Icon: React.FC<IconProps> = ({
+  name,
+  size = 24,
+  color = '#333'
 }) => {
   return <IconSymbol name={name} size={size} color={color} />;
 };

@@ -10,6 +10,7 @@ import { Alert, StyleSheet } from 'react-native';
 
 export const AddTaskScreen: React.FC = () => {
   const { createTask } = useTaskContext();
+  console.log('AddTaskScreen rendered');
 
   const handleFormSubmit = async (taskData: CreateTaskData) => {
     await createTask(taskData);
@@ -17,7 +18,7 @@ export const AddTaskScreen: React.FC = () => {
 
   const handleFormSuccess = () => {
     Alert.alert(
-      'Sucesso!', 
+      'Sucesso!',
       'Tarefa criada com sucesso!',
       [
         {
@@ -39,7 +40,7 @@ export const AddTaskScreen: React.FC = () => {
       keyboardAvoiding
     >
       <ThemedView style={styles.header}>
-        
+
         <ThemedText type="title">Nova Tarefa</ThemedText>
         <ThemedText style={styles.subtitle}>
           Preencha os detalhes da sua nova tarefa

@@ -14,7 +14,7 @@ import { Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Touchabl
 export const TaskDetailsScreen: React.FC = () => {
   const { id } = useLocalSearchParams();
   const { getTaskById, updateTask, toggleTaskCompletion, deleteTask } = useTaskContext();
-  
+
   const [task, setTask] = useState<Task | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState('');
@@ -131,8 +131,8 @@ export const TaskDetailsScreen: React.FC = () => {
   }
 
   return (
-    <KeyboardAvoidingView 
-      style={styles.container} 
+    <KeyboardAvoidingView
+      style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       {/* Header */}
@@ -143,25 +143,26 @@ export const TaskDetailsScreen: React.FC = () => {
         >
           <Icon name="chevron.left" size={24} color="#333" />
         </TouchableOpacity>
-        
+
         <ThemedText type="title" style={styles.headerTitle}>
+
           {isEditing ? 'Editar Tarefa' : 'Detalhes'}
         </ThemedText>
-        
+
         <TouchableOpacity
           style={styles.headerButton}
           onPress={() => setIsEditing(!isEditing)}
         >
-          <Icon 
-            name={isEditing ? "xmark" : "pencil"} 
-            size={20} 
-            color={isEditing ? "#FF6B6B" : "#333"} 
+          <Icon
+            name={isEditing ? "xmark" : "pencil"}
+            size={20}
+            color={isEditing ? "#FF6B6B" : "#f20303ff"}
           />
         </TouchableOpacity>
       </ThemedView>
 
-      <ScrollView 
-        style={styles.content} 
+      <ScrollView
+        style={styles.content}
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
@@ -272,7 +273,7 @@ export const TaskDetailsScreen: React.FC = () => {
                 fullWidth
               />
             </ThemedView>
-            
+
             <ThemedView style={styles.saveButtonContainer}>
               <Button
                 title={isLoading ? 'Salvando...' : 'Salvar'}
@@ -299,7 +300,6 @@ export const TaskDetailsScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
   },
   loadingContainer: {
     flex: 1,
@@ -310,15 +310,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
+    paddingHorizontal: 5,
     paddingTop: 60,
     paddingBottom: 16,
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
+
   },
   headerButton: {
     padding: 8,
-    width: 40,
+    width: 80,
   },
   headerTitle: {
     flex: 1,
