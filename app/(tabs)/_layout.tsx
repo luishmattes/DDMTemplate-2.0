@@ -1,30 +1,11 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
+// use import relativo (corrige erro TS2307 se alias '@' não estiver configurado)
+import { IconSymbol } from '../../src/components/IconSymbol';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
+    <Tabs>
       <Tabs.Screen
         name="index"
         options={{
@@ -47,6 +28,21 @@ export default function TabLayout() {
               size={focused ? 32 : 28} 
               name={focused ? "plus.circle.fill" : "plus.circle"} 
               color={color} 
+            />
+          ),
+        }}
+      />
+
+      {/* Nova aba Sobre */}
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: 'Sobre',
+          tabBarIcon: ({ color, focused }) => (
+            <IconSymbol
+              size={focused ? 30 : 26}
+              name={focused ? "house.fill" : "house.fill"}
+              color={color}
             />
           ),
         }}
